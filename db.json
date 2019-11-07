@@ -1,0 +1,35 @@
+{
+  "business": [
+    {
+      "id": 1,
+      "name": "Glory ventures",
+      "description": "Lorem Ipsum",
+      "websiteUrl": "www.gloryventure.com",
+      "contactEmail": "gloryVenture@gmail.com",
+      "phones": ["08123456455", "080123489494"],
+      "address": "76 king street, Lagos.",
+      "images": ["image1", "image2"],
+      "categoryId": [1, 2]
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "web design"
+    },
+    {
+      "id": 2,
+      "name": "software development"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "firstname": "John",
+      "lastname": "Doe",
+      "password": "password",
+      "role": "ADMIN",
+      "email": "admin@gmail.com"
+    }
+  ]
+}
