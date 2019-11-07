@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-export const H2 = styled.h1`
+export const LOGO = styled.h1`
+  color: #5a88f4;
+  font-size: 27px;
+  font-weight: 600;
+  padding-bottom: 20px;
+`;
+
+export const H2 = styled.h2`
   font-size: 21px;
   color: #43536f;
   padding-bottom: 20px;

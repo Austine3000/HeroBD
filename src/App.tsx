@@ -9,6 +9,7 @@ import {
 import ErrorBoundary from "./common/ErrorBoundary";
 import "./App.scss";
 
+import LoginPage from "./containers/Auth/Login/LoginPage";
 const AppRoutes = lazy(() => import("./routes/AppRoutes"));
 
 const App: React.FC = () => {
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Router>
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
+              <Route path="/login" component={LoginPage} />
               <Route path="/app" component={AppRoutes} />
               <Redirect to="/app" />
             </Switch>
