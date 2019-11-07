@@ -4,7 +4,6 @@ export const LOGO = styled.h1`
   color: #5a88f4;
   font-size: 27px;
   font-weight: 600;
-  padding-bottom: 20px;
 `;
 
 export const H2 = styled.h2`
