@@ -24,3 +24,12 @@ export let fetchBusinessSearchData = async (data: ISearch) => {
     throw e;
   }
 };
+
+export let fetchCreateBusinessData = async (data: any) => {
+  try {
+    const response = await AxiosWrapper.post(`/business`, data);
+    return response;
+  } catch (e) {
+    throw e;
+  }
+};

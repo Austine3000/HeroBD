@@ -1,8 +1,8 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 
 import { receiveCategoryData } from "./actions";
-import { REQUEST_CATEGORY_DATA } from "./types";
-import { fetchCategoryData } from "./api";
+import { REQUEST_CATEGORY_DATA, REQUEST_CREATE_CATEGORY } from "./types";
+import { fetchCategoryData, fetchCreateCategory } from "./api";
 
 export function* getCategoryData() {
   try {
@@ -14,6 +14,21 @@ export function* getCategoryData() {
   }
 }
 
-export function* auditSagas() {
+export function* createCategory(action: any) {
+  try {
+    // do api call
+    if (action.data === []) {
+      yield call(fetchCreateCategory, action.data);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export function* categorySagas() {
   yield takeLatest(REQUEST_CATEGORY_DATA, getCategoryData);
+}
+
+export function* categoryCreateSagas() {
+  yield takeLatest(REQUEST_CREATE_CATEGORY, createCategory);
 }

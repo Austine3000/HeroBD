@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
+import { requestCreateBusiness } from "../redux/actions";
+
 const BusinessCreateForm = React.lazy(() => import("./BusinessCreateForm"));
 
 type FormElem = React.FormEvent<HTMLFormElement>;
@@ -11,8 +13,11 @@ function BusinessCreatePage(props: any): JSX.Element {
     name: "",
     description: "",
     websiteUrl: "",
+    phoneNumber: "",
     contactEmail: "",
-    address: ""
+    address: "",
+    images: "",
+    category: ""
   };
   const [business, setBusiness] = useState(businessDetail);
 
@@ -47,7 +52,8 @@ function BusinessCreatePage(props: any): JSX.Element {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    searchAuditHandler: (payload: any) => dispatch()
+    searchAuditHandler: (payload: any) =>
+      dispatch(requestCreateBusiness(payload))
   };
 };
 

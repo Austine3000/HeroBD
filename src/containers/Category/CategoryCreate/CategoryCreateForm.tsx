@@ -16,7 +16,7 @@ export default function CategoryCreateForm(props: any) {
         <div className="auth-container">
           <ContainerWrapperCard className="col-md-12 auth-form-wrapper">
             <H3>Create Category</H3>
-            <form className="">
+            <form className="" onSubmit={props.handleSubmit}>
               <div className="form-group audit-filter-group-input">
                 <Label htmlFor="inputname" className="col-form-label">
                   Name
@@ -34,7 +34,7 @@ export default function CategoryCreateForm(props: any) {
                 </div>
               </div>
               <div className="">
-                <Button className="" onClick={props.handleSubmit}>
+                <Button className="" type="submit">
                   Submit
                 </Button>
               </div>

@@ -81,17 +81,17 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                   </div>
                 </div>
                 <div className="form-group audit-filter-group-input">
-                  <Label htmlFor="inputDate" className="col-form-label">
+                  <Label htmlFor="inputphoneNumber" className="col-form-label">
                     Phone Number
                   </Label>
                   <div className="">
                     <input
-                      type="number"
-                      name="startDate"
-                      value={props.business.startDate}
+                      type="text"
+                      name="phoneNumber"
+                      value={props.business.phoneNumber}
                       onChange={props.handleChange}
                       className="form-control"
-                      id="inputDate"
+                      id="inputphoneNumber"
                     />
                   </div>
                 </div>
@@ -111,32 +111,32 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                   </div>
                 </div>
                 <div className="form-group audit-filter-group-input">
-                  <Label htmlFor="inputDate" className="col-form-label">
-                    Images
+                  <Label htmlFor="inputimages" className="col-form-label">
+                    Images (Enter comma separated strings of image links)
                   </Label>
                   <div className="">
                     <input
                       type="text"
-                      name="startDate"
-                      value={props.business.startDate}
+                      name="images"
+                      value={props.business.images}
                       onChange={props.handleChange}
                       className="form-control"
-                      id="inputDate"
+                      id="inputimages"
                     />
                   </div>
                 </div>
                 <div className="form-group audit-filter-group-input">
-                  <Label htmlFor="inputDate" className="col-form-label">
+                  <Label htmlFor="inputcategory" className="col-form-label">
                     Category
                   </Label>
                   <div className="">
                     <input
                       type="text"
-                      name="startDate"
-                      value={props.business.startDate}
+                      name="category"
+                      value={props.business.category}
                       onChange={props.handleChange}
                       className="form-control"
-                      id="inputDate"
+                      id="inputcategory"
                     />
                   </div>
                 </div>

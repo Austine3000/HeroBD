@@ -1,8 +1,16 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 
 import { receiveBusinessLogData } from "./actions";
-import { REQUEST_BUSINESS_LOG_DATA, SEARCH_BUSINESS_LOG_DATA } from "./types";
-import { fetchBusinessLogData, fetchBusinessSearchData } from "./api";
+import {
+  REQUEST_BUSINESS_LOG_DATA,
+  SEARCH_BUSINESS_LOG_DATA,
+  REQUEST_CREATE_BUSINESS
+} from "./types";
+import {
+  fetchBusinessLogData,
+  fetchBusinessSearchData,
+  fetchCreateBusinessData
+} from "./api";
 
 export function* getBusinessLogData() {
   try {
@@ -24,10 +32,24 @@ export function* searchBusinessLog(action: any) {
   }
 }
 
-export function* auditSagas() {
+export function* createBusiness(action: any) {
+  try {
+    if (action.data === []) {
+      yield call(fetchCreateBusinessData, action.data);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export function* businessSagas() {
   yield takeLatest(REQUEST_BUSINESS_LOG_DATA, getBusinessLogData);
 }
 
-export function* auditsearchSagas() {
+export function* createBusinessSagas() {
+  yield takeLatest(REQUEST_CREATE_BUSINESS, createBusiness);
+}
+
+export function* businessSearchSagas() {
   yield takeLatest(SEARCH_BUSINESS_LOG_DATA, searchBusinessLog);
 }
