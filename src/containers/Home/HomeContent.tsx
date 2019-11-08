@@ -1,8 +1,11 @@
 import React from "react";
-import { LOGO, H3 } from "../../components/Headings/Headings";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default function HomeContent() {
+import { LOGO, H3 } from "../../components/Headings/Headings";
+import { NavLink } from "react-router-dom";
+
+function HomeContent(props: any) {
+  const { businesses } = props;
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg nav-home">
@@ -44,73 +47,43 @@ export default function HomeContent() {
       <div className="featured-listing">
         <H3>Featured Listings</H3>
         <div className="row">
-          <div className="card col-md-3 card-custom-style">
-            <img src="..." className="card-img-top" alt="img-card" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
+          {businesses.map((business: any, index: number) => (
+            <div className="card col-md-3 card-custom-style" key={index}>
+              <img
+                src={business.images}
+                className="card-img-top img-fluid"
+                alt="img-card"
+              />
+              <div className="card-body">
+                <h5 className="card-title">{business.name}</h5>
+                <p className="card-text text-shorten">{business.description}</p>
+                <div className="business-category-area">
+                  {business.category.map((item: any, index: number) => (
+                    <span key={index} className="category-pill">
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
+
+                <a href="#" className="btn btn-primary ">
+                  View Details
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="card col-md-3 card-custom-style">
-            <img src="..." className="card-img-top" alt="img-card" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
-          <div className="card col-md-3 card-custom-style">
-            <img src="..." className="card-img-top" alt="img-card" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
-          <div className="card col-md-3 card-custom-style">
-            <img src="..." className="card-img-top" alt="img-card" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
-          <div className="card col-md-3 card-custom-style">
-            <img src="..." className="card-img-top" alt="img-card" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </React.Fragment>
   );
 }
+
+const mapStateToProps = (state: any) => {
+  return {
+    businesses: state.business.data
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(HomeContent);

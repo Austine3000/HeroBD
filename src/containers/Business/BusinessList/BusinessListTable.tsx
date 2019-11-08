@@ -47,7 +47,13 @@ export default function BusinessListTable(props: any): JSX.Element {
                         <TD>{business.websiteUrl}</TD>
                         <TD>{business.contactEmail}</TD>
                         <TD>{business.address}</TD>
-                        <TD className="audit-details">Details</TD>
+
+                        <TD
+                          className="audit-details"
+                          onClick={() => props.onDeleteBusiness(business.id)}
+                        >
+                          Delete
+                        </TD>
                       </tr>
                     ))}
                   </tbody>

@@ -1,16 +1,18 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import isEmpty from "lodash/isEmpty";
+import { isNumber, isEmpty } from "lodash";
 
-import { receiveBusinessLogData } from "./actions";
+import { receiveBusinessLogData, requestBusinessLogData } from "./actions";
 import {
   REQUEST_BUSINESS_LOG_DATA,
   SEARCH_BUSINESS_LOG_DATA,
-  REQUEST_CREATE_BUSINESS
+  REQUEST_CREATE_BUSINESS,
+  DELETE_BUSINESS_DATA
 } from "./types";
 import {
   fetchBusinessLogData,
   fetchBusinessSearchData,
-  fetchCreateBusinessData
+  fetchCreateBusinessData,
+  fetchdeleteBusiness
 } from "./api";
 
 export function* getBusinessLogData() {
@@ -43,6 +45,17 @@ export function* createBusiness(action: any) {
   }
 }
 
+export function* deleteBusiness(action: any) {
+  try {
+    if (isNumber(action.id)) {
+      yield call(fetchdeleteBusiness, action.id);
+      yield put(requestBusinessLogData());
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 export function* businessSagas() {
   yield takeLatest(REQUEST_BUSINESS_LOG_DATA, getBusinessLogData);
 }
@@ -53,4 +66,8 @@ export function* createBusinessSagas() {
 
 export function* businessSearchSagas() {
   yield takeLatest(SEARCH_BUSINESS_LOG_DATA, searchBusinessLog);
+}
+
+export function* deleteBusinessSagas() {
+  yield takeLatest(DELETE_BUSINESS_DATA, deleteBusiness);
 }

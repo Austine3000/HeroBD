@@ -33,3 +33,12 @@ export let fetchCreateBusinessData = async (data: any) => {
     throw e;
   }
 };
+
+export let fetchdeleteBusiness = async (id: any) => {
+  try {
+    const response = await AxiosWrapper.delete(`/business/${id}`);
+    return response;
+  } catch (e) {
+    throw e;
+  }
+};

@@ -16,3 +16,25 @@
 .card-custom-style {
   margin: 15px 20px 20px 10px;
 }
+
+.text-shorten {
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 3.6em;
+  line-height: 1.8em;
+}
+
+.category-pill {
+  padding: 5px 10px;
+  font-size: 14px;
+  margin: 5px 5px 5px 0;
+  color: #fff;
+  border-radius: 20px;
+  background-color: #82a2eef0;
+}
+
+.business-category-area {
+  margin: 10px 0 10px 0;
+}

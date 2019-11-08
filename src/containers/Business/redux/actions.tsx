@@ -2,7 +2,8 @@ import {
   REQUEST_BUSINESS_LOG_DATA,
   RECEIVE_BUSINESS_LOG_DATA,
   SEARCH_BUSINESS_LOG_DATA,
-  REQUEST_CREATE_BUSINESS
+  REQUEST_CREATE_BUSINESS,
+  DELETE_BUSINESS_DATA
 } from "./types";
 
 export const requestBusinessLogData = () => {
@@ -13,6 +14,10 @@ export const receiveBusinessLogData = (data: any) => {
     type: RECEIVE_BUSINESS_LOG_DATA,
     data
   };
+};
+
+export const deleteBusinessData = (id: any) => {
+  return { type: DELETE_BUSINESS_DATA, id };
 };
 
 export const requestCreateBusiness = (data: any) => {
