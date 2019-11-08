@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+
+import { requestUserLogin } from "../redux/actions";
+
 const LoginForm = React.lazy(() => import("./LoginForm"));
 
 type FormElem = React.FormEvent<HTMLFormElement>;
 
-export default function LoginPage() {
-  // const { searchAuditHandler } = props;
+function LoginPage(props: any) {
+  const { loginUserHandler, isAuthenticated, history } = props;
   const userDetail = {
     email: "",
     password: ""
@@ -18,8 +22,14 @@ export default function LoginPage() {
 
   const handleSubmit = (e: FormElem): void => {
     e.preventDefault();
-    // searchAuditHandler(business);
+    loginUserHandler(user);
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push("/app/business");
+    }
+  }, [isAuthenticated]);
   return (
     <React.Fragment>
       <React.Suspense fallback={<div>Loading...</div>}>
@@ -32,3 +42,20 @@ export default function LoginPage() {
     </React.Fragment>
   );
 }
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    loginUserHandler: (payload: any) => dispatch(requestUserLogin(payload))
+  };
+};
+
+const mapStateToProps = (state: any) => {
+  return {
+    isAuthenticated: state.user.isAuthenticated
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginPage);
