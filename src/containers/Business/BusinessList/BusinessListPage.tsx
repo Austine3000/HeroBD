@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { requestBusinessLogData } from "../redux/actions";
@@ -14,7 +14,7 @@ function BusinessPage(props: any): JSX.Element {
   }, [getBusinessHandler]);
 
   const goToCreateBuiness = () => {
-    props.history.push("/app/Business/create");
+    props.history.push("/app/business/create");
   };
   return (
     <React.Fragment>

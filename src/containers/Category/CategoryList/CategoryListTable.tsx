@@ -9,20 +9,20 @@ import { Button } from "../../../components/Form/Form";
 
 import { TH, TD, TABLE, THEAD } from "../../../components/Table/Table";
 
-import "../Business.scss";
+import "../../Business/Business.scss";
 
-export default function BusinessListTable(props: any): JSX.Element {
+export default function CategoryListTable(props: any) {
   return (
     <React.Fragment>
       <ContainerWrapper id="container-wrapper">
-        <H2>Business</H2>
+        <H2>Category</H2>
         <div className="row margin-padding-remove">
           <div className="audit-button">
             <Button
               className="audit-button-filter"
-              onClick={() => props.goToCreateBuiness()}
+              onClick={() => props.goToCreateCategory()}
             >
-              Add Business
+              Add Category
             </Button>
           </div>
           <div className="col-md-12 audit-table">
@@ -33,21 +33,13 @@ export default function BusinessListTable(props: any): JSX.Element {
                     <tr>
                       <TH scope="col">S/N</TH>
                       <TH scope="col">Name</TH>
-                      <TH scope="col">Webiste URL</TH>
-                      <TH scope="col">Contact email</TH>
-                      <TH scope="col">address</TH>
-                      <TH scope="col"></TH>
                     </tr>
                   </THEAD>
                   <tbody>
-                    {props.businesses.map((business: any, index: number) => (
-                      <tr key={business.id}>
+                    {props.categories.map((category: any, index: number) => (
+                      <tr key={category.id}>
                         <TD>{index + 1}</TD>
-                        <TD>{business.name}</TD>
-                        <TD>{business.websiteUrl}</TD>
-                        <TD>{business.contactEmail}</TD>
-                        <TD>{business.address}</TD>
-                        <TD className="audit-details">Details</TD>
+                        <TD>{category.name}</TD>
                       </tr>
                     ))}
                   </tbody>

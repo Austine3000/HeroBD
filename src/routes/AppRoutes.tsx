@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import AppSidebar from "../common/AppSidebar/AppSidebar";
 import BusinessListPage from "../containers/Business/BusinessList/BusinessListPage";
 import BusinessCreatePage from "../containers/Business/BusinessCreate/BusinessCreatePage";
+import CategoryListPage from "../containers/Category/CategoryList/CategoryListPage";
 
 export default function AppRoutes() {
   return (
@@ -12,8 +13,9 @@ export default function AppRoutes() {
         <AppSidebar />
         <section id="content-area">
           <Switch>
-            <Route exact path="/app/Business" component={BusinessListPage} />
-            <Route path="/app/Business/create" component={BusinessCreatePage} />
+            <Route exact path="/app/business" component={BusinessListPage} />
+            <Route path="/app/business/create" component={BusinessCreatePage} />
+            <Route path="/app/category" component={CategoryListPage} />
             <Redirect to="/app/Business" />
           </Switch>
         </section>

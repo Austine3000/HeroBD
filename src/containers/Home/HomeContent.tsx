@@ -1,5 +1,6 @@
 import React from "react";
 import { LOGO, H3 } from "../../components/Headings/Headings";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 export default function HomeContent() {
   return (
@@ -20,14 +21,14 @@ export default function HomeContent() {
         <div className="collapse navbar-collapse nav-list" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link" to="/">
                 Business
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link" to="/login">
                 Login
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

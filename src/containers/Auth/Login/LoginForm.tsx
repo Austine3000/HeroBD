@@ -5,6 +5,7 @@ import {
   ContainerWrapperCard
 } from "../../../components/ContainerWrapper/ContainerWrapper";
 import { Label, Button } from "../../../components/Form/Form";
+import { NavLink } from "react-router-dom";
 
 import "../Auth.scss";
 
@@ -12,7 +13,9 @@ export default function LoginForm(props: any) {
   return (
     <React.Fragment>
       <ContainerWrapper id="container-wrapper">
-        <LOGO>HeroBD</LOGO>
+        <LOGO>
+          <NavLink to="/">HeroBD</NavLink>
+        </LOGO>
         <div className="auth-container">
           <ContainerWrapperCard className="col-md-4 auth-form-wrapper">
             <H3>Login into your account</H3>
