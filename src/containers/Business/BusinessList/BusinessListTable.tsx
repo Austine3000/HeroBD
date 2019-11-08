@@ -1,5 +1,5 @@
 import React from "react";
-import { H2, H3 } from "../../../components/Headings/Headings";
+import { H2 } from "../../../components/Headings/Headings";
 import {
   ContainerWrapper,
   ContainerWrapperCard

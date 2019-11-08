@@ -1,5 +1,4 @@
 import AxiosWrapper from "../../../common/AxiosWrapper";
-import { async } from "q";
 
 interface IUser {
   email: string;

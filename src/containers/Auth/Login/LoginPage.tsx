@@ -29,7 +29,7 @@ function LoginPage(props: any) {
     if (isAuthenticated) {
       history.push("/app/business");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, history]);
   return (
     <React.Fragment>
       <React.Suspense fallback={<div>Loading...</div>}>

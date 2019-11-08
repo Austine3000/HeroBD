@@ -65,9 +65,7 @@ function HomeContent(props: any) {
                   ))}
                 </div>
 
-                <a href="#" className="btn btn-primary ">
-                  View Details
-                </a>
+                <button className="btn btn-primary ">View Details</button>
               </div>
             </div>
           ))}
