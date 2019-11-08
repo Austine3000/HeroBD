@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
+import { requestCategoryData } from "../redux/actions";
+
 const CategoryListTable = React.lazy(() => import("./CategoryListTable"));
 
 function CategoryListPage(props: any) {
   const { getCategoryHandler, categories } = props;
 
   useEffect(() => {
-    //getCategoryHandler();
-  }, []);
+    getCategoryHandler();
+  }, [getCategoryHandler]);
 
   const goToCreateCategory = () => {
     props.history.push("/app/category/create");
@@ -27,13 +29,13 @@ function CategoryListPage(props: any) {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    getBusinessHandler: () => dispatch()
+    getCategoryHandler: () => dispatch(requestCategoryData())
   };
 };
 
 const mapStateToProps = (state: any) => {
   return {
-    categories: []
+    categories: state.category.data
   };
 };
 
