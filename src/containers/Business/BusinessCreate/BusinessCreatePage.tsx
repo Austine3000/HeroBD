@@ -8,7 +8,15 @@ const BusinessCreateForm = React.lazy(() => import("./BusinessCreateForm"));
 type FormElem = React.FormEvent<HTMLFormElement>;
 
 function BusinessCreatePage(props: any): JSX.Element {
-  const { searchAuditHandler } = props;
+  const { createbusinessHandler, categories } = props;
+
+  let newCategories = [];
+  for (let i = 0; i < categories.length; i++) {
+    newCategories.push({
+      value: categories[i].name,
+      label: categories[i].name
+    });
+  }
   const businessDetail = {
     name: "",
     description: "",
@@ -28,7 +36,8 @@ function BusinessCreatePage(props: any): JSX.Element {
 
   const handleSubmit = (e: FormElem): void => {
     e.preventDefault();
-    searchAuditHandler(business);
+    createbusinessHandler(business);
+    setBusiness(businessDetail);
   };
 
   const handleClear = (e: FormElem): void => {
@@ -36,14 +45,20 @@ function BusinessCreatePage(props: any): JSX.Element {
     setBusiness(businessDetail);
   };
 
+  const handleSelectChange = (category: any) => {
+    setBusiness({ ...business, category });
+  };
+
   return (
     <React.Fragment>
       <React.Suspense fallback={<div>Loading...</div>}>
         <BusinessCreateForm
           business={business}
+          categories={newCategories}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           handleClear={handleClear}
+          handleSelectChange={handleSelectChange}
         />
       </React.Suspense>
     </React.Fragment>
@@ -52,12 +67,18 @@ function BusinessCreatePage(props: any): JSX.Element {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    searchAuditHandler: (payload: any) =>
+    createbusinessHandler: (payload: any) =>
       dispatch(requestCreateBusiness(payload))
   };
 };
 
+const mapStateToProps = (state: any) => {
+  return {
+    categories: state.category.data
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(BusinessCreatePage);

@@ -1,4 +1,5 @@
 import { call, put, takeLatest } from "redux-saga/effects";
+import isEmpty from "lodash/isEmpty";
 
 import { receiveBusinessLogData } from "./actions";
 import {
@@ -34,7 +35,7 @@ export function* searchBusinessLog(action: any) {
 
 export function* createBusiness(action: any) {
   try {
-    if (action.data === []) {
+    if (!isEmpty(action.data)) {
       yield call(fetchCreateBusinessData, action.data);
     }
   } catch (e) {

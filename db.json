@@ -8,8 +8,90 @@
       "contactEmail": "gloryVenture@gmail.com",
       "phoneNumber": "08123456455",
       "address": "76 king street, Lagos.",
-      "images": ["image1", "image2"],
-      "categoryId": [1, 2]
+      "images": [
+        "image1",
+        "image2"
+      ],
+      "categoryId": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "name": "knlk",
+      "description": "/lknkl",
+      "websiteUrl": "/.,m;l",
+      "phoneNumber": ";lM:L",
+      "contactEmail": "/lkml;",
+      "address": ";LL:",
+      "images": ";lk'",
+      "category": [
+        {
+          "value": "web design",
+          "label": "web design"
+        },
+        {
+          "value": "software development",
+          "label": "software development"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "name": "ew;'lew",
+      "description": "e;lewl;ew",
+      "websiteUrl": "ew/. ewwe",
+      "phoneNumber": "ew we;l",
+      "contactEmail": "ew/lew",
+      "address": "ewwe .we",
+      "images": "wew.wel;w",
+      "category": [
+        {
+          "value": "software development",
+          "label": "software development"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "name": "ew;'lew",
+      "description": "e;lewl;ew",
+      "websiteUrl": "ew/. ewwe",
+      "phoneNumber": "ew we;l",
+      "contactEmail": "ew/lew",
+      "address": "ewwe .we",
+      "images": "wew.wel;w",
+      "category": [
+        {
+          "value": "software development",
+          "label": "software development"
+        }
+      ],
+      "id": 12
     }
   ],
   "category": [
@@ -24,6 +106,28 @@
     {
       "name": "Advertising",
       "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "name": "test",
+      "id": 15
     }
   ],
   "user": [

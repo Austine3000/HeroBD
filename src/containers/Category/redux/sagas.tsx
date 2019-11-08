@@ -1,4 +1,5 @@
 import { call, put, takeLatest } from "redux-saga/effects";
+import isEmpty from "lodash/isEmpty";
 
 import { receiveCategoryData } from "./actions";
 import { REQUEST_CATEGORY_DATA, REQUEST_CREATE_CATEGORY } from "./types";
@@ -17,7 +18,7 @@ export function* getCategoryData() {
 export function* createCategory(action: any) {
   try {
     // do api call
-    if (action.data === []) {
+    if (!isEmpty(action.data)) {
       yield call(fetchCreateCategory, action.data);
     }
   } catch (e) {

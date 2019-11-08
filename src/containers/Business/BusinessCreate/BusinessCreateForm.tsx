@@ -1,4 +1,6 @@
 import React from "react";
+
+import Select from "react-select";
 import { H2, H3 } from "../../../components/Headings/Headings";
 import {
   ContainerWrapper,
@@ -130,13 +132,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     Category
                   </Label>
                   <div className="">
-                    <input
-                      type="text"
-                      name="category"
+                    <Select
                       value={props.business.category}
-                      onChange={props.handleChange}
-                      className="form-control"
-                      id="inputcategory"
+                      onChange={props.handleSelectChange}
+                      isMulti
+                      options={props.categories}
                     />
                   </div>
                 </div>
