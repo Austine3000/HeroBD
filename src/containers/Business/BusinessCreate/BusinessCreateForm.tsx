@@ -18,14 +18,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
             <ContainerWrapperCard className="audit-filter-container">
               <H3>Create Business</H3>
               <form className="audit-filter-form">
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputname"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputname" className="col-form-label">
                     Name
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <input
                       type="text"
                       name="name"
@@ -37,14 +34,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     />
                   </div>
                 </div>
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputdescription"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputdescription" className="col-form-label">
                     Description
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <textarea
                       name="description"
                       value={props.business.description}
@@ -55,14 +49,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     ></textarea>
                   </div>
                 </div>
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputwebsiteUrl"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputwebsiteUrl" className=" col-form-label">
                     Website Url
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <input
                       type="text"
                       name="websiteUrl"
@@ -74,14 +65,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     />
                   </div>
                 </div>
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputcontactEmail"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputcontactEmail" className="col-form-label">
                     Contact Email
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <input
                       type="email"
                       name="contactEmail"
@@ -92,14 +80,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     />
                   </div>
                 </div>
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputDate"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputDate" className="col-form-label">
                     Phone Number
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <input
                       type="number"
                       name="startDate"
@@ -110,14 +95,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     />
                   </div>
                 </div>
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputaddress"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputaddress" className="col-form-label">
                     Address
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <input
                       type="text"
                       name="address"
@@ -128,14 +110,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     />
                   </div>
                 </div>
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputDate"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputDate" className="col-form-label">
                     Images
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <input
                       type="text"
                       name="startDate"
@@ -146,14 +125,11 @@ export default function BusinessCreateForm(props: any): JSX.Element {
                     />
                   </div>
                 </div>
-                <div className="form-group row audit-filter-group-input">
-                  <Label
-                    htmlFor="inputDate"
-                    className="col-sm-3 col-form-label"
-                  >
+                <div className="form-group audit-filter-group-input">
+                  <Label htmlFor="inputDate" className="col-form-label">
                     Category
                   </Label>
-                  <div className="col-sm-9">
+                  <div className="">
                     <input
                       type="text"
                       name="startDate"
